@@ -31,12 +31,12 @@ makeplot <- function(plotnum = 2){
 ## open png device        
         png(file = pngfilename, bg = "transparent", width = 480, height = 480)
 ## code for plot 1-----------------------------------------        
-        if (plotnum == 1){
-                hist(datatouse$Global_active_power, 
-                     col = "Red",
-                     main = "Global Active Power", 
-                     xlab = "Global Active Power (kilowatts)")
-        }
+#         if (plotnum == 1){
+#                 hist(datatouse$Global_active_power, 
+#                      col = "Red",
+#                      main = "Global Active Power", 
+#                      xlab = "Global Active Power (kilowatts)")
+#         }
 
 ## code for plot 2  ---------------------------------------     
          if (plotnum == 2){
@@ -46,36 +46,36 @@ makeplot <- function(plotnum = 2){
                      xlab = "")
         }        
 ## code for plot 3 ----------------------------------------
-        if (plotnum == 3){
-                plot(datatouse$DateTime, datatouse$Sub_metering_1, type = "n", 
-                     xlab = "", ylab = "Energy sub metering")
-                lines(datatouse$DateTime, datatouse$Sub_metering_1, col = "black")
-                lines(datatouse$DateTime, datatouse$Sub_metering_2, col = "red")
-                lines(datatouse$DateTime, datatouse$Sub_metering_3, col = "blue")
-                legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
-                       col = c("black", "red", "blue"), lty = 1 )
-        }
+#         if (plotnum == 3){
+#                 plot(datatouse$DateTime, datatouse$Sub_metering_1, type = "n", 
+#                      xlab = "", ylab = "Energy sub metering")
+#                 lines(datatouse$DateTime, datatouse$Sub_metering_1, col = "black")
+#                 lines(datatouse$DateTime, datatouse$Sub_metering_2, col = "red")
+#                 lines(datatouse$DateTime, datatouse$Sub_metering_3, col = "blue")
+#                 legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
+#                        col = c("black", "red", "blue"), lty = 1 )
+#         }
         
 ## code for plot 4 ----------------------------------------        
-        if (plotnum == 4){
-                par(mfrow = c(2,2))
-                plot(datatouse$DateTime, datatouse$Global_active_power, 
-                     type= "l", xlab = "", ylab = "Global Active Power")
-                
-                plot(datatouse$DateTime, datatouse$Voltage, 
-                     type = "l", xlab = "datetime", ylab = "")                
-                
-                plot(datatouse$DateTime, datatouse$Sub_metering_1, type = "n", 
-                     xlab = "", ylab = "Energy sub metering")
-                lines(datatouse$DateTime, datatouse$Sub_metering_1, col = "black")
-                lines(datatouse$DateTime, datatouse$Sub_metering_2, col = "red")
-                lines(datatouse$DateTime, datatouse$Sub_metering_3, col = "blue")
-                legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
-                       col = c("black", "red", "blue"), lty = 1, bty = "n" )
-                
-                plot(datatouse$DateTime, datatouse$Global_reactive_power, 
-                     type = "l", xlab = "datetime")
-        }
+#         if (plotnum == 4){
+#                 par(mfrow = c(2,2))
+#                 plot(datatouse$DateTime, datatouse$Global_active_power, 
+#                      type= "l", xlab = "", ylab = "Global Active Power")
+#                 
+#                 plot(datatouse$DateTime, datatouse$Voltage, 
+#                      type = "l", xlab = "datetime", ylab = "")                
+#                 
+#                 plot(datatouse$DateTime, datatouse$Sub_metering_1, type = "n", 
+#                      xlab = "", ylab = "Energy sub metering")
+#                 lines(datatouse$DateTime, datatouse$Sub_metering_1, col = "black")
+#                 lines(datatouse$DateTime, datatouse$Sub_metering_2, col = "red")
+#                 lines(datatouse$DateTime, datatouse$Sub_metering_3, col = "blue")
+#                 legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
+#                        col = c("black", "red", "blue"), lty = 1, bty = "n" )
+#                 
+#                 plot(datatouse$DateTime, datatouse$Global_reactive_power, 
+#                      type = "l", xlab = "datetime")
+#         }
     
 ## close devise and print final message------------------------
         garbage <- dev.off()
